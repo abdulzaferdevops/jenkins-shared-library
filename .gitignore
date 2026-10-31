@@ -1,0 +1,5 @@
+.lab-*.sh
+*.pem
+*.key
+id_*
+.env
