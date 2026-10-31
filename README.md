@@ -75,6 +75,17 @@ The library's own pipeline runs the tests and ShellCheck on every push.
 
 See [CHANGELOG.md](CHANGELOG.md).
 
+## Results
+
+| Build | Change | Outcome |
+|:--|:--|:--|
+| Library CI #1 | `v1.0.0` | 20/20 shell tests passed, ShellCheck clean, layout check passed |
+| Lab 1 #6 | `Jenkinsfile` | `code changed` → deployed and verified `00006-e13d6d8` |
+| Lab 1 #7 | `README.md` only | `only documentation changed` → deploy **skipped** |
+
+Testing found and fixed a real defect before release: the first `labSsh` quoted arguments only for the
+local shell, so a value containing `$(...)` would have run on the server.
+
 ## Licence
 
 MIT
